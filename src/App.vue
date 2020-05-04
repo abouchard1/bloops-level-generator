@@ -44,8 +44,12 @@ export default {
     const json = ref("");
 
     function clear() {
-      items.value.forEach(i => (i.active = false));
+      items.value.forEach(i => {
+        i.active = false;
+        i.selectedTypeIndex = -1;
+      });
     }
+    
     function toggle(item) {
       item.active = !item.active;
       item.selectedTypeIndex = item.active ? selectedTypeIndex.value : -1;
