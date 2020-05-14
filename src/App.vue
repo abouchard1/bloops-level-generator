@@ -27,12 +27,12 @@ import { ref } from "@vue/composition-api";
 export default {
   setup() {
     const items = ref(
-      Array.from({ length: 144 }).map((v, i) => ({
+      Array.from({ length: 153 }).map((v, i) => ({
         id: i + 1,
         active: false,
         selectedTypeIndex: -1,
-        x: -9 + ((i + 1) % 16 === 0 ? 16 : (i + 1) % 16),
-        y: -(-5 + Math.ceil((i + 1) / 16))
+        x: -9 + ((i + 1) % 17 === 0 ? 17 : (i + 1) % 17),
+        y: -(-5 + Math.ceil((i + 1) / 17))
       }))
     );
     const types = [
@@ -49,7 +49,7 @@ export default {
         i.selectedTypeIndex = -1;
       });
     }
-    
+
     function toggle(item) {
       item.active = !item.active;
       item.selectedTypeIndex = item.active ? selectedTypeIndex.value : -1;
@@ -99,7 +99,7 @@ export default {
 <style>
 .grid {
   display: grid;
-  grid-template-columns: repeat(16, 50px);
+  grid-template-columns: repeat(17, 50px);
   grid-template-rows: repeat(9, 50px);
 }
 
