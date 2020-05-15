@@ -97,7 +97,7 @@ export default {
       )
       json.value = JSON.stringify({
         name: 'Niveau',
-        world: worldNumber.value,
+        world: Number(worldNumber.value),
         character: character && {
           type: 'PERSONNAGE',
           pos_x: character.x,
